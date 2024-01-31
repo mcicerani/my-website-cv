@@ -1,2 +1,2 @@
 # my-website-cv
-personal website
+personal website written in html, css and javascript
