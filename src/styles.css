@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+html{
+    font-family: 'Lato', sans-serif;
+}
+body{
+    min-height: 100vh;
+    margin: 0;
+    background-color: #FFFFFF;
+    text-rendering: optimizeLegibility;
+    display: flex;
+    flex-direction: column;
+}
+img{
+    max-width: 100%;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+.nav{
+    top : 0;
+    background-color: #fff;
+    opacity: 0.8;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    z-index: 100;
+}
+.nav__item{
+    text-transform: uppercase;
+    width: auto;
+    float: left;
+    list-style: none;
+    margin: 0 2rem 0 2rem;
+    text-decoration: none;
+}
+.nav__item a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    font-style: italic;
+}
+.nav__item a:hover{
+    color: #ff0000;
+}
+.nav__item a:active{
+    color: #ff0000;
+}
+.home{
+    background-size: cover;
+    background-image: url(/images/main.jpg);
+    height: 100vh;
+    color: #fff;
+    font-size: xx-large;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.home h1{
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    font-size: 4rem;
+    font-weight: 500;
+    font-style: italic;
+}
+.home h2{
+    font-size: 2.5rem;
+    padding-left: 0.5rem;
+    font-weight: 300;
+    font-style: italic;
+}
+.about{
+    background-size: cover;
+    background-image: url(/images/background.jpg);
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.about__container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    width: 75vw;
+    background-color: #EAEAEA;
+    border: #000 1px solid;
+    overflow: hidden;
+    opacity: 0.9;
+}
+.about__container h1{
+    font-size: 3rem;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+}
+
+.about__container__text{
+    float: left;
+    text-align: center;
+    padding: 2rem 1rem 2rem 1rem;
+    width: 60vw;
+}
+
+.about__container__text p{
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.about__container__text h2{
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+}
+.skills{
+    float: left;
+    text-align: center;
+    padding: 2rem 1rem 2rem 1rem;
+    text-decoration: none;
+    list-style: none;
+    width: 60vw;
+    border-top: #000 1px solid;
+    border-bottom: #000 1px solid;
+}
+.skills__item{
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style:normal;
+    padding: 0.2rem;
+}
+.portfolio{
+    background-image: url(/images/ramiro-mendes-CjS3QsRuxnE-unsplash.jpg);
+    background-size:cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.portfolio__container{
+    float: left;
+    position: relative;
+    width: 100vw;
+    display: grid;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 45vw 45vw;
+    grid-template-rows: 10vh 40vh 40vh;
+    grid-gap: 1vh;
+}
+.portfolio__item{
+    opacity: 0.9;
+    background-color: #EAEAEA;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-top: #000 1px solid;
+    border-bottom: #000 1px solid;
+    height: 40vh;
+    width: 45vw;
+    border-radius: 1%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.portfolio__item img{
+    padding: 1rem;
+    width: 75%;
+    height: 75%;
+    object-fit: cover;
+}
+.portfolio__item h2{
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+}
+.portfolio__item p{
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+}
+.portfolio__item1{
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    width: 100%;
+    text-align: center;
+}
+
+.portfolio__item1 h1{
+    font-size: 3rem;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+}
+.contatti{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
