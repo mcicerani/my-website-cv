@@ -81,7 +81,7 @@ a{
 }
 .home{
     background-size: cover;
-    background-image: url(/images/main.jpg);
+    background-image: url(images/main.jpg);
     height: 100vh;
     color: #fff;
     font-size: xx-large;
@@ -104,7 +104,7 @@ a{
 }
 .about{
     background-size: cover;
-    background-image: url(/images/laptop-3244483_1920.jpg);
+    background-image: url(images/laptop-3244483_1920.jpg);
     display: flex;
     height: 100vh;
     align-items: center;
@@ -164,7 +164,7 @@ a{
     padding: 0.2rem;
 }
 .portfolio{
-    background-image: url(/images/background.jpg);
+    background-image: url(images/background.jpg);
     background-size:cover;
     min-height: 100vh;
     display: flex;
@@ -234,7 +234,7 @@ a{
 
 }
 .contatti{
-    background: url(/images/computer-820281_1920.jpg);
+    background: url(images/computer-820281_1920.jpg);
     background-size: cover;
     height: 100vh;
     display: flex;
