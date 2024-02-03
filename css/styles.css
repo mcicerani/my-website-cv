@@ -80,6 +80,11 @@ a{
     list-style: none;
     margin: 0 2rem 0 2rem;
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+.nav__item:hover{
+    color: #ff0000;
+    transform: scale(1.1);
 }
 .nav__item a{
     text-decoration: none;
@@ -91,6 +96,7 @@ a{
 }
 .nav__item a:hover{
     color: #ff0000;
+    transform: scale(1.1);
 }
 .nav__item a:active{
     color: #ff0000;
@@ -130,7 +136,7 @@ a{
     font-size: 4vw;
     color: #FFFFFF;
     position: absolute;
-    top: 90vh;
+    top: 88vh;
     right: 46vw;
     border: #FFFFFF 1px solid;
     border-radius: 50%;
@@ -229,6 +235,8 @@ a{
     grid-gap: 1rem;
 }
 .portfolio__item{
+    align-items: center;
+    justify-content: center;
     opacity: 0.9;
     background-color: #EAEAEA;
     display: flex;
@@ -253,6 +261,20 @@ a{
     font-size: 1.5rem;
     font-weight: 400;
     font-style: italic;
+    transition: 0.3s;
+}
+.portfolio__item h2:hover{
+    color: #ff0000;
+    transform: scale(1.1);
+}
+.portfolio__item h2 a{
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.portfolio__item h2 a:hover{
+    color: #ff0000;
+    transform: scale(1.2);
 }
 .portfolio__item p{
     font-size: 1.1rem;
@@ -284,7 +306,9 @@ a{
     justify-content: center;
 }
 .hidden{
-    display: none;
+    visibility: hidden;
+    height: 0px;
+    margin: 0px;
 }
 .contatti__container{
     justify-content: center;
@@ -398,10 +422,19 @@ input[type=submit]:hover {
     }
     .nav__item{
         margin: 0 2rem 0 2rem;
+        transition: none;
+    }
+    .nav__item:hover{
+        transform: none;
+        color: black;
     }
 
     .nav__item a{
         font-size: 1rem;
+    }
+    .nav__item a:hover{
+        transform: none;
+        color: black;
     }
     .home h1{
         font-size: 4rem;
@@ -440,6 +473,18 @@ input[type=submit]:hover {
     }
     .portfolio__item h2{
         font-size: 1.3rem;
+        transition: none;
+    }
+    .portfolio__item h2:hover{
+        transform: none;
+        color: black;
+    }
+    .portfolio__item h2 a{
+        transition: none;
+    }
+    .portfolio__item h2 a:hover{
+        color: black;
+        transform: none;
     }
     .portfolio__item p{
         font-size: 1rem;
@@ -576,6 +621,11 @@ input[type=submit]:hover {
         font-size: 1.1rem;
     }
     .socials i{
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+    .fa-arrow-down{
+        font-size: 6vw;
+        right: 44vw;
+
     }
 }
