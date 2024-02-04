@@ -1,3 +1,20 @@
+//Funzione comparsa/discomparsa del menu
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("nav__bar").style.visibility = "visible";
+        document.getElementById("nav__bar").style.backgroundColor = "#fff";
+        document.getElementById("nav__bar").style.position = "fixed";
+        document.getElementById("nav__bar").style.transition = "all 0.5s ease-in-out";
+    }        
+    else{
+        document.getElementById("nav__bar").style.visibility = "collapse";
+        document.getElementById("nav__bar").style.backgroundColor = "transparent";
+        document.getElementById("nav__bar").style.position = "absolute";
+        document.getElementById("nav__bar").style.transition = "all 0s ease-in-out"
+    } 
+}
+
 // Funzione per il Form di contatto
 document.getElementById("submit").addEventListener("click",function validateForm() {
     var x = document.forms["form"]["name"].value;
@@ -25,7 +42,7 @@ spans.forEach((span, idx) => {
         if (window.innerWidth > 990) {
             span.style.fontSize = '80%';
             span.style.color = '#ff0000';
-            span.style.transition = 'all 0.2s';
+            span.style.transition = 'all 0.1s';
         }
     });
     span.addEventListener('mouseout', (e) => {
