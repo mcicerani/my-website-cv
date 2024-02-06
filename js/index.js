@@ -16,18 +16,21 @@ function scrollFunction() {
 }
 
 // Funzione per il Form di contatto
-document.getElementById("submit").addEventListener("click",function validateForm() {
+
+document.getElementById("submit").addEventListener("click", function(event) {
     var x = document.forms["form"]["name"].value;
     var y = document.forms["form"]["email"].value;
     var z = document.forms["form"]["message"].value;
     if (x == "" || y == "" || z == "") {
         alert("I campi non possono essere vuoti");
-        return false; // Impedisce l'invio del modulo
+        event.preventDefault(); // Prevent form submission
     }
     else {
         alert("Grazie per avermi contattato! Ti risponderò al più presto.");
     }
 });
+
+
 
 //Funzione per inserire ogni lettera di .home h1 e h2 in un tag span
 const h1 = document.querySelector('.home h1');
