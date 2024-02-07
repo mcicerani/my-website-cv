@@ -1,17 +1,20 @@
 //Funzione comparsa/discomparsa del menu
+
+var navBar = document.querySelector(".nav");
 window.onscroll = function() {scrollFunction()};
+
 function scrollFunction() {
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        document.getElementById("nav__bar").style.visibility = "visible";
-        document.getElementById("nav__bar").style.backgroundColor = "#fff";
-        document.getElementById("nav__bar").style.position = "fixed";
-        document.getElementById("nav__bar").style.transition = "all 0.5s ease-in-out";
+        navBar.style.visibility = "visible";
+        navBar.style.backgroundColor = "#fff";
+        navBar.style.position = "fixed";
+        navBar.style.transition = "all 0.5s ease-in-out";
     }        
     else{
-        document.getElementById("nav__bar").style.visibility = "collapse";
-        document.getElementById("nav__bar").style.backgroundColor = "transparent";
-        document.getElementById("nav__bar").style.position = "absolute";
-        document.getElementById("nav__bar").style.transition = "all 0s ease-in-out"
+        navBar.style.visibility = "collapse";
+        navBar.style.backgroundColor = "transparent";
+        navBar.style.position = "absolute";
+        navBar.style.transition = "all 0s ease-in-out"
     } 
 }
 
