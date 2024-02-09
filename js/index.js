@@ -70,7 +70,12 @@ arrowDown.addEventListener('click', function() {
     });
 });
 
+/*--------------------------------------
+#PORTFOLIO
+--------------------------------------*/
 
+
+//Funzione per cambiare il layout di .portfolio__item in base alla dimensione della finestra
 
 
 
