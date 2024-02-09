@@ -1,5 +1,5 @@
 /*--------------------------------------
-                #MENU
+#MENU
 --------------------------------------*/
 
 //Funzione comparsa/discomparsa del menu
@@ -27,10 +27,11 @@ function scrollFunction() {
 
 
 /*--------------------------------------
-                #HOME
+#HOME
 --------------------------------------*/
 
 //Funzione per inserire ogni lettera di .home h1 e h2 in un tag span
+
 const h1 = document.querySelector('.home h1');
 const h2 = document.querySelector('.home h2');
 h1.innerHTML = h1.textContent.replace(/\S/g, "<span>$&</span>");
@@ -74,7 +75,7 @@ arrowDown.addEventListener('click', function() {
 
 
 /*--------------------------------------
-                #FORM
+#FORM
 --------------------------------------*/
 
 // Funzione per il Form di contatto
@@ -97,7 +98,7 @@ document.getElementById("submit").addEventListener("click", function(event) {
 
 
 /*--------------------------------------
-                #FOOTER
+#FOOTER
 --------------------------------------*/
 
 //Funzione per tornare in cima alla pagina on click su #arrow__up
