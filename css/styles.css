@@ -302,9 +302,10 @@ a {
         box-sizing: border-box;
         margin-left: auto;
         margin-right: auto;
-        grid-template-columns: 45vw 45vw;
-        grid-template-rows: 10vh 35vh 35vh;
-        grid-gap: 1rem;
+        margin-bottom: 4vh;
+        grid-template-columns: repeat(45vw);
+        grid-template-rows: 10vh repeat(auto-fill 35vh);
+        grid-gap: 2vh;
     }
 
         .portfolio__item {
@@ -626,7 +627,7 @@ a {
     }
 
         .portfolio__item--title h1 { font-size: 2.5rem; }
-        .portfolio__item h2 { font-size:  1.3rem; }
+        .portfolio__item h2 { font-size:  1.5rem; }
 
         .portfolio__item h2:hover {
             transform: none;
@@ -800,6 +801,7 @@ a {
             grid-template-columns: 90vw;
             grid-template-rows: 10vh 35vh 35vh 35vh;
             grid-gap: 5vh;
+
         }
 
             .portfolio__item--title {
@@ -814,8 +816,8 @@ a {
                 width: 90vw;
             }
 
-                .portfolio__item h2 { font-size: 1.1rem; }
-                .portfolio__item p { font-size: 0.9rem;}
+                .portfolio__item h2 { font-size: 1.5rem; }
+                .portfolio__item p { font-size: 1rem;}
 
                 .portfolio__item img {
                     padding: 0.5rem;
