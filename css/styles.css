@@ -145,7 +145,7 @@ a {
 .home {
     background-position: center;
     background-size: cover;
-    background-image: url(/images/main.jpg);
+    background-image: url(/images/main.webp);
     height: 100vh;
     color: #fff;
     font-size: xx-large;
@@ -208,7 +208,7 @@ a {
 .about {
     background-position: center;
     background-size: cover;
-    background-image: url(/images/laptop-3244483_1920.jpg);
+    background-image: url(/images/laptop-3244483_1920.webp);
     display: flex;
     height: 100vh;
     align-items: center;
@@ -282,7 +282,7 @@ a {
 
 .portfolio {
     background-position: center;
-    background-image: url(/images/background.jpg);
+    background-image: url(/images/background.webp);
     background-size:cover;
     min-height: 100vh;
     display: flex;
@@ -303,7 +303,7 @@ a {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 4vh;
-        grid-template-columns: repeat(45vw);
+        grid-template-columns: repeat(auto-fill 45vw);
         grid-template-rows: 10vh repeat(auto-fill 35vh);
         grid-gap: 2vh;
     }
@@ -324,6 +324,9 @@ a {
             text-align: center;
             justify-content: center;
             align-items: center;
+        }
+        .portfolio__item:last-child{
+            grid-column: 1/span 2;
         }
 
             .portfolio__item img {
@@ -373,7 +376,7 @@ a {
                 font-weight: 400;
                 font-style: italic;
                 text-align: center;
-                margin-bottom: 2vh;
+                margin-bottom: 1vh;
             }
 
 
@@ -385,7 +388,7 @@ a {
 \*------------------------------------*/
 
 .contatti{
-    background-image: url(/images/computer-820281_1920.jpg);
+    background-image: url(/images/computer-820281_1920.webp);
     background-size: cover;
     height: 100vh;
     display: flex;
@@ -647,7 +650,7 @@ a {
 
         .portfolio__item img {
             padding: 0.5rem;
-            width:  70%;
+            width:  100%;
             height: 70%;
         }
 
@@ -799,13 +802,13 @@ a {
 
         .portfolio__container {
             grid-template-columns: 90vw;
-            grid-template-rows: 10vh 35vh 35vh 35vh;
+            grid-template-rows: 10vh repeat(auto-fill 35vh);
             grid-gap: 5vh;
 
         }
 
             .portfolio__item--title {
-                margin-top: 15vh;
+                margin-top: 10vh;
                 width: 90%;
                 grid-column: 1;
             }
@@ -816,12 +819,17 @@ a {
                 width: 90vw;
             }
 
+            .portfolio__item:last-child{
+                grid-column: 1;
+            }
+    
+
                 .portfolio__item h2 { font-size: 1.5rem; }
                 .portfolio__item p { font-size: 1rem;}
 
                 .portfolio__item img {
                     padding: 0.5rem;
-                    width:  70%;
+                    width:  100%;
                     height: 70%;
                 }
 
