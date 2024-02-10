@@ -70,12 +70,37 @@ arrowDown.addEventListener('click', function() {
     });
 });
 
+
+
+
+
 /*--------------------------------------
 #PORTFOLIO
 --------------------------------------*/
 
 
-//Funzione per cambiare il layout di .portfolio__item in base alla dimensione della finestra
+//Funzione per passare da un'item del portfolio all'altra on click su #next e #prev
+
+const next = document.getElementById('next');
+const prev = document.getElementById('prev');
+const items = document.querySelectorAll('.portfolio__item');
+let index = 0;
+
+next.addEventListener('click', function() {
+    items[index].style.display = 'none';
+    index = (index + 1) % items.length;
+    items[index].style.display = 'block';
+}
+);
+
+prev.addEventListener('click', function() {
+    items[index].style.display = 'none';
+    index = (index - 1 + items.length) % items.length;
+    items[index].style.display = 'block';
+}
+);
+
+
 
 
 
