@@ -284,7 +284,7 @@ a {
     background-position: center;
     background-image: url(/images/background.webp);
     background-size:cover;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -399,7 +399,6 @@ a {
 
             .counter{
                 padding: .5rem;
-                height: 0.5rem;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -408,14 +407,18 @@ a {
 
                 .counter__item{
                     width: 1rem;
-                    height: 1rem;
+                    height: 0.2rem;
                     background-color: black;
-                    border-radius: 50%;
-                    margin: 0.1rem;
+                    margin-right: 0.1rem;
+                    transition: 0.4s;
+                    opacity: 0.5;
                 }
 
                 .counter__item:first-child{
                     background-color: #ff0000;
+                    width: 1rem;
+                    height: 1rem;
+                    opacity: 1;
                 }
     
 
@@ -845,7 +848,7 @@ a {
             background-color: #EAEAEA;
             opacity: 0.9;
             border: #000 1px solid;           
-            margin-top: 6vh;
+            margin-top: 7.5vh;
             font-size: 2rem;
             width: 70vw;
             height: 3rem;}
