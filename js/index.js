@@ -78,28 +78,40 @@ arrowDown.addEventListener('click', function() {
 #PORTFOLIO
 --------------------------------------*/
 
+//Funzione per aggiungere uno span .counter__item in .counter per ogni .portfolio__item e per passare da un'item del portfolio all'altra on click su #next e #prev
 
-//Funzione per passare da un'item del portfolio all'altra on click su #next e #prev
 
+const counter = document.querySelector('.counter');
 const next = document.getElementById('next');
 const prev = document.getElementById('prev');
 const items = document.querySelectorAll('.portfolio__item');
 let index = 0;
 
+for (let i = 0; i < items.length; i++) {
+    const span = document.createElement('span');
+    span.classList.add('counter__item');
+    counter.appendChild(span);
+}
+
+const counter_items = document.querySelectorAll('.counter__item');
+
 next.addEventListener('click', function() {
     items[index].style.display = 'none';
+    counter_items[index].style.backgroundColor = 'black';
     index = (index + 1) % items.length;
     items[index].style.display = 'block';
+    counter_items[index].style.backgroundColor = '#ff0000';
 }
 );
 
 prev.addEventListener('click', function() {
     items[index].style.display = 'none';
+    counter_items[index].style.backgroundColor = 'black';
     index = (index - 1 + items.length) % items.length;
     items[index].style.display = 'block';
+    counter_items[index].style.backgroundColor = '#ff0000';
 }
 );
-
 
 
 
