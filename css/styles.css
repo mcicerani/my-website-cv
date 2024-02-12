@@ -296,7 +296,7 @@ a {
         font-weight: 400;
         font-style: italic;
         text-align: center;
-        margin: 5vh auto;
+        margin-top: 5vh;
     }
 
     .portfolio__container {
@@ -312,7 +312,6 @@ a {
         box-sizing: border-box;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 4vh;
     }
 
         .portfolio__items{
@@ -398,7 +397,7 @@ a {
             }
 
             .counter{
-                padding: .5rem;
+                padding: 1rem;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
