@@ -98,13 +98,11 @@ const counter_items = document.querySelectorAll('.counter__item');
 next.addEventListener('click', function() {
     items[index].style.display = 'none';
     counter_items[index].style.backgroundColor = 'black';
-    counter_items[index].style.height = '0.2rem';
     counter_items[index].style.width = '1rem';
     counter_items[index].style.opacity = '0.5';
     index = (index + 1) % items.length;
     items[index].style.display = 'block';
     counter_items[index].style.backgroundColor = '#ff0000';
-    counter_items[index].style.height = '1rem';
     counter_items[index].style.width = '1rem';
     counter_items[index].style.opacity = '1';
 
@@ -114,14 +112,12 @@ next.addEventListener('click', function() {
 prev.addEventListener('click', function() {
     items[index].style.display = 'none';
     counter_items[index].style.backgroundColor = 'black';
-    counter_items[index].style.height = '0.2rem';
     counter_items[index].style.width = '1rem';
     counter_items[index].style.opacity = '0.5';
 
     index = (index - 1 + items.length) % items.length;
     items[index].style.display = 'block';
     counter_items[index].style.backgroundColor = '#ff0000';
-    counter_items[index].style.height = '1rem';
     counter_items[index].style.width = '1rem';
     counter_items[index].style.opacity = '1';
 }
