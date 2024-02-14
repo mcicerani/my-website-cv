@@ -416,7 +416,7 @@ a {
                 .counter__item:first-child{
                     background-color: #ff0000;
                     width: 1rem;
-                    height: 1rem;
+                    height: 0.2rem;
                     opacity: 1;
                 }
     
@@ -896,7 +896,7 @@ a {
     \*------------------------------------*/
 
     .contatti__container {
-        height: 80vh;
+        height: 75vh;
         width:  80vw;
     }
 
