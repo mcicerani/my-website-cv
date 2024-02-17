@@ -117,10 +117,9 @@ a {
         .nav__item a {
             text-decoration: none;
             color: #000;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 400;
             transition: all 0.3s ease;
-            font-style: italic;
         }
 
         .nav__item a:hover {
@@ -617,28 +616,24 @@ a {
     #NAVIGATION BAR
     \*------------------------------------*/
 
-    .nav {
-        padding: 0.7rem 0rem;
+
+    .nav__item {
+        margin: 0 2rem 0 2rem;
+        transition: none;
     }
 
-        .nav__item {
-            margin: 0 2rem 0 2rem;
-            transition: none;
-        }
+    .nav__item:hover {
+        transform: none;
+        color: black;
+    }
 
-        .nav__item:hover {
+        .nav__item a {
+            font-size: 1.2rem;            }
+
+        .nav__item a:hover {
             transform: none;
             color: black;
         }
-
-            .nav__item a {
-                font-size: 1rem;
-            }
-
-            .nav__item a:hover {
-                transform: none;
-                color: black;
-            }
 
 
 
@@ -808,8 +803,7 @@ a {
         }
 
             .nav__item a {
-                font-size: 0.9rem;
-                font-weight: 500;
+                font-size: 1rem;
             }
 
 
