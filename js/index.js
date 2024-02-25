@@ -4,7 +4,7 @@
 
 //Funzione comparsa/discomparsa del menu
 
-var navBar = document.querySelector(".nav");
+const navBar = document.querySelector(".nav");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -136,7 +136,7 @@ document.getElementById("submit").addEventListener("click", function(event) {
     var x = document.forms["form"]["name"].value;
     var y = document.forms["form"]["email"].value;
     var z = document.forms["form"]["message"].value;
-    if (x == "" || y == "" || z == "") {
+    if (x === "" || y === "" || z === "") {
         alert("I campi non possono essere vuoti");
         event.preventDefault(); // Prevent form submission
     }
