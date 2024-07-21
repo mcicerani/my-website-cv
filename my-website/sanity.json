@@ -1,0 +1,19 @@
+{
+    "root": true,
+    "project": {
+      "name": "my-website",
+      "basePath": "/"
+    },
+    "api": {
+      "projectId": "50cvvnf6",
+      "dataset": "production"
+    },
+    "plugins": [
+      "@sanity/base",
+      "@sanity/components",
+      "@sanity/default-layout",
+      "@sanity/default-login",
+      "@sanity/desk-tool"
+    ]
+  }
+  
