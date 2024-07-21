@@ -10,20 +10,26 @@ const client = createClient({
 
 // Funzione per ottenere i dati della sezione "About" da Sanity
 async function fetchAbout() {
-  const query = '*[_type == "about"][0]'
-  return await client.fetch(query)
+  const query = `*[_type == "about"][0]{
+    title,
+    description1,
+    description2,
+    skills,
+    "cvUrl": cv.asset->url
+  }`;
+  return await client.fetch(query);
 }
 
 // Funzione per ottenere gli elementi del portfolio da Sanity
 async function fetchPortfolioItems() {
-  const query = '*[_type == "portfolioItem"]{title, description, url, "imageUrl": image.asset->url}'
-  return await client.fetch(query)
+  const query = '*[_type == "portfolioItem"]{title, description, url, "imageUrl": image.asset->url}';
+  return await client.fetch(query);
 }
 
 // Funzione per visualizzare la sezione "About" nel frontend
 async function displayAbout() {
-  const about = await fetchAbout()
-  const aboutContainer = document.querySelector('.about__container')
+  const about = await fetchAbout();
+  const aboutContainer = document.querySelector('.about__container');
 
   if (aboutContainer) {
     // Inserisce i dati della sezione "About" nell'HTML
@@ -40,10 +46,10 @@ async function displayAbout() {
       <div class="about__container__text">
         <p>${about.description2}</p>
       </div>
-      <a class="cv" href="${about.cv.asset.url}" target="_blank">Curriculum Vitae</a>
-    `
+      <a class="cv" href="${about.cvUrl}" target="_blank">Curriculum Vitae</a>
+    `;
   } else {
-    console.error('Elemento .about__container non trovato.')
+    console.error('Elemento .about__container non trovato.');
   }
 }
 
