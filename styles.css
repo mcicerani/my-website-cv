@@ -41,6 +41,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.loadingScreen img {
     animation: pulse 1.5s infinite;
 }
 
