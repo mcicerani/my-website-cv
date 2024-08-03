@@ -1,3 +1,19 @@
+
+/*--------------------------------------
+#LOADER
+--------------------------------------*/
+
+
+var loadingScreen = document.querySelector(".loadingScreen");
+window.addEventListener('load', function() {
+  loadingScreen.style.display = 'none';
+})
+
+
+/*--------------------------------------
+#SANITY
+--------------------------------------*/
+
 import { createClient } from 'https://cdn.skypack.dev/@sanity/client'
 
 // Configura il client di Sanity con il projectId, dataset e API version
