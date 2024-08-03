@@ -13,7 +13,7 @@
         import { visionTool } from "@sanity/vision";
   
         // Schemi importati
-        import { schemaTypes } from 'my-website/schemasType/index.js'; // Assicurati che il percorso sia corretto
+        import { schemaTypes } from 'my-website/schemaType/index.js'; // Assicurati che il percorso sia corretto
   
         const config = defineConfig({
           basePath: '/admin',
