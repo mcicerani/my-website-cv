@@ -14,8 +14,8 @@ export default defineType({
     }),
     // Campo per le descrizioni dei servizi
     defineField({
-      name: 'descrizione',
-      title: 'Descrizione',
+      name: 'description',
+      title: 'Description',
       type: 'array',
       of: [{type: 'string'}],
     }),

@@ -38,7 +38,7 @@ async function fetchAbout() {
 
 async function fetchServices() {
   try {
-    const query = '*[_type == "service"]{title, descrizione}';
+    const query = '*[_type == "service"]{title, description}';
     const services = await client.fetch(query);
     console.log('Fetched services:', services); // Debugging
     return services;
@@ -94,7 +94,7 @@ async function displayServices() {
       serviceDiv.innerHTML = `
         <h2>${service.title}</h2>
         <ul>
-          ${service.descrizione.map(desc => `<li>${desc}</li>`).join('')}
+          ${service.description.map(desc => `<li>${desc}</li>`).join('')}
         </ul>
       `
       servicesContainer.appendChild(serviceDiv)
