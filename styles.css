@@ -26,7 +26,7 @@ body {
     background-color: #FFFFFF;
     margin: 0;
     overscroll-behavior: none;
-
+    overflow-x: hidden;
 }
 
 #studio-container {
@@ -244,11 +244,10 @@ a {
 .service {
     background-position: center;
     background-image: url(/images/background5.webp);
-    background-size: 100vw;
+    background-size: cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 20px;
     overflow-x: hidden ;
     width: 300%;
     scroll-snap-type: x mandatory; 
@@ -754,7 +753,18 @@ a {
     }
 
 
+    /*------------------------------------*\
+    #SERVICE
+    \*------------------------------------*/
 
+    .service h1 { font-size: 2.5rem; }
+
+    .service__container {
+        width:  80vw;
+        height: 80vh;
+    }
+
+        .service__item ul li { font-size: 1.3rem; }
 
 
 
@@ -926,7 +936,18 @@ a {
 
 
 
+    /*------------------------------------*\
+    #SERVICE
+    \*------------------------------------*/
 
+    .service h1 { font-size: 2rem; }
+
+    .service__container {
+        width:  90vw;
+        height: 90vh;
+    }
+
+        .service__item ul li { font-size: 1rem; }
 
 
     /*------------------------------------*\
