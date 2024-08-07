@@ -910,7 +910,7 @@ a {
     }
 
         .nav__item {
-            margin: 0 0.75rem 0 0.75rem;
+            margin: 0 0.6rem 0 0.6rem;
         }
 
             .nav__item a {
@@ -941,7 +941,7 @@ a {
     \*------------------------------------*/
 
     .service h1 { font-size: 2rem;
-    margin-top: 1vh;
+    margin-bottom: 5vh;
     }
 
     .service__container {
