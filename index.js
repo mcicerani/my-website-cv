@@ -37,8 +37,15 @@ async function fetchAbout() {
 }
 
 async function fetchServices() {
-  const query = '*[_type == "service"]{title, descrizione}';
-  return await client.fetch(query);
+  try {
+    const query = '*[_type == "service"]{title, descrizione}';
+    const services = await client.fetch(query);
+    console.log('Fetched services:', services); // Debugging
+    return services;
+  } catch (error) {
+    console.error('Error fetching services:', error);
+    return [];
+  }
 }
 
 // Funzione per ottenere gli elementi del portfolio da Sanity
@@ -82,7 +89,7 @@ async function displayServices() {
   if (servicesContainer) {
     // Inserisce i servizi nell'HTML
     services.forEach(service => {
-      const serviceDiv = document.createElement('section')
+      const serviceDiv = document.createElement('div')
       serviceDiv.classList.add('service__item')
       serviceDiv.innerHTML = `
         <h2>${service.title}</h2>
