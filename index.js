@@ -89,10 +89,10 @@ async function displayServices() {
   if (servicesContainer) {
     // Inserisce i servizi nell'HTML
     services.forEach(service => {
-      const serviceDiv = document.createElement('div')
+      const serviceDiv = document.createElement('section')
       serviceDiv.classList.add('service__item')
       serviceDiv.innerHTML = `
-        <h2>${service.title}</h2>
+        <h1>${service.title}</h1>
         <ul>
           ${service.description.map(desc => `<li>${desc}</li>`).join('')}
         </ul>
@@ -156,6 +156,7 @@ function handlePortfolioScrolling(itemCount) {
       counter_items[index].style.opacity = '0.5'
       index = (index + 1) % items.length
       items[index].style.display = 'block'
+      counter_items[index].style.backgroundColor = '#ff0000'
       counter_items[index].style.backgroundColor = '#ff0000'
       counter_items[index].style.width = '1rem'
       counter_items[index].style.opacity = '1'
