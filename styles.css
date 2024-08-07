@@ -700,9 +700,12 @@ a {
         padding: 0rem;
     }
 
-
-
-
+    .privacy {
+        display: flex;
+        flex-direction: row;
+        width: 12.5rem;
+        margin:0.5rem auto;
+    }
 
 
 /*------------------------------------*\
