@@ -931,8 +931,10 @@ a {
     #SERVICE
     \*------------------------------------*/
 
-    .service h1 { font-size: 2rem;
-    margin-bottom: 5vh;
+    .service h1 {
+        font-size: 2rem;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
     }
 
     .service__container {
