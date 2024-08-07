@@ -68,8 +68,8 @@
                     type: 'string',
                   }),
                   defineField({
-                    name: 'description',
-                    title: 'Description',
+                    name: 'descrizione',
+                    title: 'Descrizione',
                     type: 'array',
                     of: [{type: 'string'}],
                   }),
