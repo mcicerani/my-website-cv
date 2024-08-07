@@ -77,7 +77,7 @@ async function displayAbout() {
 // Funzione per visualizzare i servizi nel frontend
 async function displayServices() {
   const services = await fetchServices()
-  const servicesContainer = document.querySelector('.services__container')
+  const servicesContainer = document.querySelector('.service__container')
 
   if (servicesContainer) {
     // Inserisce i servizi nell'HTML
