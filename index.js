@@ -40,7 +40,6 @@ async function fetchServices() {
   try {
     const query = '*[_type == "service"]{title, description}';
     const services = await client.fetch(query);
-    console.log('Fetched services:', services); // Debugging
     return services;
   } catch (error) {
     console.error('Error fetching services:', error);
@@ -98,9 +97,12 @@ async function displayServices() {
         </ul>
       `
       servicesContainer.appendChild(serviceDiv)
-    })
+    });
+
+    // Call the animation setup function after rendering
+    setupGSAPAnimations();
   } else {
-    console.error('Elemento .services__container non trovato.')
+    console.error("Elemento .service__container non trovato.");
   }
 }
 
@@ -261,44 +263,56 @@ document.addEventListener('DOMContentLoaded', () => {
 #SERVICES
 --------------------------------------*/
 
-gsap.registerPlugin(ScrollTrigger);
+function setupGSAPAnimations() {
+  gsap.registerPlugin(ScrollTrigger);
 
-let horizontalSections = gsap.utils.toArray(".service");
+  let horizontalSections = gsap.utils.toArray(".service");
 
-horizontalSections.forEach((container) => {
- let sections = container.querySelectorAll(".service__item");
+  horizontalSections.forEach((container) => {
+    let sections = container.querySelectorAll(".service__item");
 
-gsap.to(sections, {
-  xPercent: -100 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: container,
-    pin: true,
-    scrub: 1,
-    snap: {
-      snapTo: 1 / (sections.length - 1), // Snap to each section
-      duration: {min: 0.1, max: 0.3}, // Set minimum and maximum duration for snap animation
-      ease: "power1.inOut" // Easing for the snapping animation
-    },
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: container,
+        pin: true,
+        scrub: 1,
+        snap: {
+          snapTo: 1 / (sections.length - 1), // Snap to each section
+          duration: { min: 0.1, max: 0.3 }, // Set minimum and maximum duration for snap animation
+          ease: "power1.inOut", // Easing for the snapping animation
+        },
 
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=3500",
-    onUpdate: self => {
-      // Calcola l'indice corrente basato sul progresso
-      let currentIndex = Math.round(self.progress * (sections.length - 1));
-      sections.forEach((section, index) => {
-        if (index === currentIndex) {
-          // Se è la sezione corrente, animala in entrata
-          gsap.to(section, { opacity: 1, scale: 1, duration: 0.3, ease: "power1.inOut" });
-        } else {
-          // Se non è la sezione corrente, animala in uscita
-          gsap.to(section, { opacity: 0, scale: 0.8, duration: 0.3, ease: "power1.inOut" });
-        }
-      });
-    }
-  }
-});
-})
+        // base vertical scrolling on how wide the container is so it feels more natural.
+        end: "+=3500",
+        onUpdate: (self) => {
+          // Calcola l'indice corrente basato sul progresso
+          let currentIndex = Math.round(self.progress * (sections.length - 1));
+          sections.forEach((section, index) => {
+            if (index === currentIndex) {
+              // Se è la sezione corrente, animala in entrata
+              gsap.to(section, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.3,
+                ease: "power1.inOut",
+              });
+            } else {
+              // Se non è la sezione corrente, animala in uscita
+              gsap.to(section, {
+                opacity: 0,
+                scale: 0.8,
+                duration: 0.3,
+                ease: "power1.inOut",
+              });
+            }
+          });
+        },
+      },
+    });
+  });
+}
 
 
   /*--------------------------------------
