@@ -56,6 +56,25 @@
                   }),
                 ],
               }),
+              // Schema "service"
+              defineType({
+                name: 'service',
+                title: 'Service',
+                type: 'document',
+                fields: [
+                  defineField({
+                    name: 'title',
+                    title: 'Title',
+                    type: 'string',
+                  }),
+                  defineField({
+                    name: 'description',
+                    title: 'Description',
+                    type: 'array',
+                    of: [{type: 'string'}],
+                  }),
+                ],
+              }),
               // Schema "portfolioItem"
               defineType({
                 name: 'portfolioItem',

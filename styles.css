@@ -12,7 +12,10 @@
 
 html {
     font-family: 'Lato', sans-serif;
-}
+    overscroll-behavior: smooth;
+    overflow-x: hidden;
+} 
+
 
 
 body {
@@ -22,6 +25,8 @@ body {
     min-height: 100vh;
     background-color: #FFFFFF;
     margin: 0;
+    overscroll-behavior: none;
+
 }
 
 #studio-container {
@@ -232,8 +237,69 @@ a {
     }
 
 
+/*------------------------------------*\
+  #SERVICES
+\*------------------------------------*/
 
+.service {
+    background-position: center;
+    background-image: url(/images/background5.webp);
+    background-size: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-x: hidden ;
+    width: 300%;
+    scroll-snap-type: x mandatory; 
 
+}
+
+.service h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 10vh;
+}
+
+    .service__container {
+        overscroll-behavior: none;
+        display: flex;
+        flex-wrap: nowrap;
+        min-height: 85vh;
+        width: 85vw;
+        margin: 6vw;
+        background-color: #EAEAEA;
+        border: #000 1px solid;
+        overflow-x: hidden;
+        opacity: 0.9;
+        box-shadow: 0px 0px 5px 0px #000;
+        scroll-snap-type: x mandatory; /* Enable snap scrolling */
+        align-items: center;
+    }
+
+    .service__item {
+        min-width: 85vw; /* Set a minimum width for items */
+        scroll-snap-align: start; /* Align to start on snap */
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .service__item ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .service__item ul li{
+        font-size: 1.5rem;
+        font-weight: 300;
+        font-style: italic;
+        padding: 1rem;
+
+    }
+    
 
 /*------------------------------------*\
   #ABOUT

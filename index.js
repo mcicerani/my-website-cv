@@ -36,6 +36,11 @@ async function fetchAbout() {
   return await client.fetch(query);
 }
 
+async function fetchServices() {
+  const query = '*[_type == "service"]{title, descrizione}';
+  return await client.fetch(query);
+}
+
 // Funzione per ottenere gli elementi del portfolio da Sanity
 async function fetchPortfolioItems() {
   const query = '*[_type == "portfolioItem"]{title, description, url, "imageUrl": image.asset->url}';
@@ -66,6 +71,29 @@ async function displayAbout() {
     `;
   } else {
     console.error('Elemento .about__container non trovato.');
+  }
+}
+
+// Funzione per visualizzare i servizi nel frontend
+async function displayServices() {
+  const services = await fetchServices()
+  const servicesContainer = document.querySelector('.services__container')
+
+  if (servicesContainer) {
+    // Inserisce i servizi nell'HTML
+    services.forEach(service => {
+      const serviceDiv = document.createElement('section')
+      serviceDiv.classList.add('service__item')
+      serviceDiv.innerHTML = `
+        <h2>${service.title}</h2>
+        <ul>
+          ${service.descrizione.map(desc => `<li>${desc}</li>`).join('')}
+        </ul>
+      `
+      servicesContainer.appendChild(serviceDiv)
+    })
+  } else {
+    console.error('Elemento .services__container non trovato.')
   }
 }
 
@@ -144,6 +172,7 @@ function handlePortfolioScrolling(itemCount) {
 
 document.addEventListener('DOMContentLoaded', () => {
   displayAbout() // Visualizza la sezione "About"
+  displayServices() // Visualizza i servizi
   displayPortfolioItems() // Visualizza gli elementi del portfolio
 
   /*--------------------------------------
@@ -220,6 +249,50 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error('Elemento #arrow__down non trovato.')
   }
   
+/*--------------------------------------
+#SERVICES
+--------------------------------------*/
+
+gsap.registerPlugin(ScrollTrigger);
+
+let horizontalSections = gsap.utils.toArray(".service");
+
+horizontalSections.forEach((container) => {
+ let sections = container.querySelectorAll(".service__item");
+
+gsap.to(sections, {
+  xPercent: -100 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: container,
+    pin: true,
+    scrub: 1,
+    snap: {
+      snapTo: 1 / (sections.length - 1), // Snap to each section
+      duration: {min: 0.1, max: 0.3}, // Set minimum and maximum duration for snap animation
+      ease: "power1.inOut" // Easing for the snapping animation
+    },
+
+    // base vertical scrolling on how wide the container is so it feels more natural.
+    end: "+=3500",
+    onUpdate: self => {
+      // Calcola l'indice corrente basato sul progresso
+      let currentIndex = Math.round(self.progress * (sections.length - 1));
+      sections.forEach((section, index) => {
+        if (index === currentIndex) {
+          // Se è la sezione corrente, animala in entrata
+          gsap.to(section, { opacity: 1, scale: 1, duration: 0.3, ease: "power1.inOut" });
+        } else {
+          // Se non è la sezione corrente, animala in uscita
+          gsap.to(section, { opacity: 0, scale: 0.8, duration: 0.3, ease: "power1.inOut" });
+        }
+      });
+    }
+  }
+});
+})
+
+
   /*--------------------------------------
   #FORM
   --------------------------------------*/
