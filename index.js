@@ -71,7 +71,7 @@ function setupGSAPAnimations() {
         scrub: 1,
         snap: {
           snapTo: 1 / (sections.length - 1), // Snap to each section
-          duration: { min: 0.1, max: 0.3 }, // Set minimum and maximum duration for snap animation
+          duration: { min: 0.1, max: 0.2 }, // Set minimum and maximum duration for snap animation
           ease: "power1.inOut", // Easing for the snapping animation
         },
 
@@ -86,7 +86,7 @@ function setupGSAPAnimations() {
               gsap.to(section, {
                 opacity: 1,
                 scale: 1,
-                duration: 0.3,
+                duration: 0.1,
                 ease: "power1.inOut",
               });
             } else {
@@ -94,7 +94,7 @@ function setupGSAPAnimations() {
               gsap.to(section, {
                 opacity: 0,
                 scale: 0.8,
-                duration: 0.3,
+                duration: 0.1,
                 ease: "power1.inOut",
               });
             }
