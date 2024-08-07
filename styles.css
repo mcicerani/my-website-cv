@@ -940,11 +940,15 @@ a {
     #SERVICE
     \*------------------------------------*/
 
-    .service h1 { font-size: 2rem; }
+    .service h1 { font-size: 2rem;
+    margin-top: 3vh;
+    }
 
     .service__container {
         width:  90vw;
         height: 90vh;
+        overflow: hidden;
+
     }
 
         .service__item ul li { font-size: 1rem; }
